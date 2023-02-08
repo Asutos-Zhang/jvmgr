@@ -6,7 +6,7 @@ use command::CmdHolder;
 #[derive(Debug,Parser)]
 #[clap(author="asutos", version="0.0.1",about="http://asutos.top",long_about="aaaabbbbccccddd")]
 struct SubCommand {
-    // #[clap(short,long)]
+     #[clap(short,long)]
     subCmd:String,
     args:Vec<String>,
 }
