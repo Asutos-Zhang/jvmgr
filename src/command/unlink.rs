@@ -10,6 +10,9 @@ impl Unlink {
 
 impl Cmd for Unlink {
     fn execute(&self, args: Vec<String>) {
+        if(args.len()==0) {
+            panic!("need at least one arg");
+        }
         println!("Executing Unlink,  args:{:?}", args);
     }
 }

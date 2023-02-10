@@ -14,5 +14,7 @@ struct SubCommand {
 fn main() {
     let command = SubCommand::parse();
 
+    println!("{:?}",&command);
+
     CmdHolder::generate(command.subCmd).execute(command.args);
 }

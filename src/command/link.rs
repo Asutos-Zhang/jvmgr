@@ -10,6 +10,7 @@ impl Link {
 
 impl Cmd for Link {
     fn execute(&self, args: Vec<String>) {
+        if(args.len()!=2) {panic!("need  two args");}
         println!("Executing Link,  args:{:?}", args);
     }
 }
