@@ -9,4 +9,19 @@ struct Version {
     path: String,
 }
 
-impl Config {}
+impl Config {
+
+    pub fn readAllFromFile(file:&str) -> Result<Vec<Version>> {
+        let mut file = fs::File::create(file)?;
+        let mut contents = String::new();
+        file.read_to_string(&mut contents)?;
+        Ok(Vec::new())
+    }
+
+    pub fn readCurrent(file:&str) ->Result<Version> {
+        Version {
+            "".to_string(),
+            "".to_string(),
+        }
+    }
+}
