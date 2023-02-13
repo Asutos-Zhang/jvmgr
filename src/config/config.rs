@@ -24,4 +24,10 @@ impl Config {
             "".to_string(),
         }
     }
+
+    pub fn writeToFile(file:&str,alias:&str,jdk_path:&str) -> Result<(),Error> {
+        let mut file = fs::File::create(file)?;
+        
+        Ok(())
+    }
 }
