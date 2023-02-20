@@ -53,5 +53,19 @@ fn p(a: &mut [char]) {
     println!("{:?}", a);
 }
 
+fn get_default<'r, K, V>(map: &'r mut HashMap<K, V>, key: K) -> &'r mut V
+where
+    K: std::hash::Hash + Eq + Copy,
+    V: Default,
+{
+    //map.entry(key).or_insert_with(||V::default())
 
-
+    if map.contains_key(&key) {
+        return match map.get_mut(&key) {
+            Some(value) => value,
+            None => unreachable!(),
+        };
+    }
+    map.insert(key, V::default());
+    map.get_mut(&key).unwrap()
+}
